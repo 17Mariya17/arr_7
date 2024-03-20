@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <h1>ДЗ 20. Написати декілька функцій</h1>
+    <script>
+      // 1. Дано масив з елементами різних типів. Створити функцію яка вираховує середнє арифметичне лише числових елементів даного масиву.
+      // Define a function to calculate the average of array 1
+      const task_1 = () => {
+        // Define an array of numbers and strings
+        let array1 = [1, 22, 4, "f", "h"];
+        // Create new array of numbers
+        array_1_num = 0;
+        array_1_sum = 0;
+        // For each element of array
+        for (let i = 0; i < array1.length; i++) {
+          // Check whether element is number
+          if (typeof array1[i] == "number") {
+            // Add element to array_1_num
+            array_1_sum += array1[i];
+            array_1_num = array_1_num + 1;
+          }
+        }
+        // Results
+        document.write(
+          "<b> Завдання №1 </b>" +
+            "<br>" +
+            "<b> Елементи масиву: </b>" +
+            array1 +
+            "<br>" +
+            "<b> Cереднє арифметичне лише числових елементів даного масиву масиву: </b>" +
+            array_1_sum / array_1_num
+        );
+      };
+      // Call the function
+      task_1();
+    </script>
+  </body>
 </html>
