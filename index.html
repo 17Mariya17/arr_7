@@ -33,11 +33,75 @@
             array1 +
             "<br>" +
             "<b> Cереднє арифметичне лише числових елементів даного масиву масиву: </b>" +
-            array_1_sum / array_1_num
+            array_1_sum / array_1_num +
+            "<br>"
         );
       };
       // Call the function
       task_1();
+
+      //2. Написати функцію doMath(x, znak, y), яка отримує 3 аргументи: числа x і y, рядок znak. У змінній znak може бути: +, -, *, /, %, ^ (ступінь ).Вивести результат математичної дії, вказаної в змінній znak.Обидва числа і знак виходять від користувача.
+      // Define elements
+      let x = prompt("2. Напишіть перше число (x)");
+      let znak = prompt("2. Напишіть знак (+, -, *, /, %, ^ )");
+      let y = prompt("2. Напишіть перше число (y)");
+      // Function
+      const doMath = (x, znak, y) => {
+        if (~znak.search(/[^+\-*/%^]/) || znak.length !== 1) return "Do change";
+        return eval(x + znak.replace("^", "**") + y);
+      };
+      // Results
+      document.write(
+        "<br> <b> Завдання №2 </b>" +
+          "<br>" +
+          "<b> Результат математичної дії: </b>" +
+          x +
+          znak +
+          y +
+          "=" +
+          doMath(x, znak, y) +
+          "<br>"
+      );
+
+      // 3. Написати функцію заповнення даними користувача двомірного масиву. Довжину основного масиву і внутрішніх масивів задає користувач. Значення всіх елементів всіх масивів задає користувач.
+      // Define elements
+      let first_arr = prompt("3. Яка довжина головного масиву?");
+      let second_arr = prompt("3. Яка довжина внутрішнього масиву?");
+      // Create new array of numbers
+      const arr = new Array(+first_arr)
+        .fill(0)
+        .map((_, ind) =>
+          new Array(+second_arr)
+            .fill(0)
+            .map((_, i) => prompt(`3. Введіть елемент ${i} в масиві ${ind}`))
+        );
+      // Results
+      document.write(
+        "<br> <b> Завдання №3 </b>" +
+          "<br>" +
+          "<b> Двомірний масив: </b>" +
+          arr.map((subArr) => "\n" + subArr) +
+          "<br>"
+      );
+
+      //4. Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач.
+      //Створюємо масив.
+      let array4 = prompt("4. Введіть вихідний рядок").split("");
+      //Користувач задає елемент для видалення.
+      let delete_array4 = prompt("4. Введіть символи для видалення").split("");
+      //Видаляємо елементи з масиву.
+      filtered_array = array4.filter((el) => !delete_array4.includes(el));
+      //Оновлений масив.
+      document.write(
+        "<br> <b> Завдання №4 </b>" +
+          "<br>" +
+          "<b> Вихідний масив: </b>" +
+          array4 +
+          "<br>" +
+          "<b> Оновлений масив: </b>" +
+          filtered_array +
+          "<br>"
+      );
     </script>
   </body>
 </html>
